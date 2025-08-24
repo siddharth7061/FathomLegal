@@ -15,9 +15,57 @@ import {
   ChevronRight,
 } from "lucide-react";
 
+const DisclaimerPopup = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
+      {/* Slightly Dark Background Overlay */}
+      <div
+        className="absolute inset-0 bg-black opacity-50 transition-opacity"
+        onClick={onClose}
+      ></div>
+
+      {/* Popup Box */}
+      <div className="relative bg-white rounded-lg shadow-2xl max-w-2xl mx-4 p-8 max-h-[90vh] overflow-y-auto">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">
+            <span style={{ color: "#A5292A" }}>Disclaimer</span>
+          </h2>
+
+          <p className="text-gray-600 leading-relaxed mb-8 text-left">
+            In accordance with the regulations set by the Bar Council of India,
+            lawyers and law firms are prohibited from actively seeking work or
+            engaging in advertising practices. By selecting the 'I Agree'
+            button, you affirm and acknowledge that you are voluntarily seeking
+            information about Fathom Legal, Advocates & Corporate Consultants
+            (FLACC) and that there has been no form of advertising, direct
+            communication, solicitation, invitation, or any other attempt,
+            either from FLACC or any of its members, to encourage work
+            engagement through this website.
+          </p>
+
+          <button
+            onClick={onClose}
+            className="text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-all"
+            style={{ backgroundColor: "#A5292A" }}
+          >
+            I Agree
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const FathomLegal = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
+  const [showDisclaimer, setShowDisclaimer] = useState(true);
+
+  const handleDisclaimerClose = () => {
+    setShowDisclaimer(false);
+  };
 
   const services = [
     {
@@ -80,6 +128,12 @@ const FathomLegal = () => {
 
   return (
     <div className="min-h-screen bg-white">
+      {/* Disclaimer Popup */}
+      <DisclaimerPopup
+        isOpen={showDisclaimer}
+        onClose={handleDisclaimerClose}
+      />
+
       {/* Header */}
       <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
         <div className="container mx-auto px-4">
@@ -206,14 +260,26 @@ const FathomLegal = () => {
       <section
         id="home"
         className="text-gray-800 py-20 relative"
-        style={{
-          backgroundColor: "#FAFAFA",
-          backgroundImage: `linear-gradient(rgba(250, 250, 250, 0.9), rgba(250, 250, 250, 0.9)), url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-        }}
+        style={{ backgroundColor: "#FAFAFA" }}
       >
+        {/* Background Image Layer with Blur */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            filter: "blur(2px)",
+          }}
+        ></div>
+
+        {/* Overlay */}
+        <div
+          className="absolute inset-0"
+          style={{ backgroundColor: "rgba(250, 250, 250, 0.9)" }}
+        ></div>
+
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
