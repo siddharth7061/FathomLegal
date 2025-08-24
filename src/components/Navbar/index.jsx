@@ -5,12 +5,12 @@ export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-50">
+    <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
-            <div className="text-2xl font-bold text-blue-900">
-              Fathom <span className="text-blue-600">Legal</span>
+            <div className="text-2xl font-bold text-gray-800">
+              Fathom <span style={{ color: "#A5292A" }}>Legal</span>
             </div>
           </div>
 
@@ -18,55 +18,55 @@ export const Navbar = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <a
               href="#home"
-              className="text-gray-700 hover:text-blue-600 font-medium"
+              className="text-[#A5292A] hover:text-[#A5292A] font-medium"
             >
               Home
             </a>
             {/* Services Dropdown */}
             <div className="relative group">
-              <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center">
+              <button className="text-gray-600 hover:text-[#A5292A] font-medium flex items-center">
                 Services <ChevronDown className="ml-1 w-4 h-4" />
               </button>
               <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <a
                   href="#corporate"
-                  className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                  className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   General Corporate Advisory
                 </a>
                 <a
                   href="#startup"
-                  className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                  className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   Agreements and Policies
                 </a>
                 <a
                   href="#dispute"
-                  className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                  className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   Dispute Resolution
                 </a>
                 <a
                   href="#ngo"
-                  className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                  className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   Intellectual Property Services
                 </a>
                 <a
                   href="#ngo"
-                  className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                  className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   Safe & Inclusive Workplaces
                 </a>
                 <a
                   href="#ngo"
-                  className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                  className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   Real Estate Solution
                 </a>
                 <a
                   href="#ngo"
-                  className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                  className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   REIT Solution
                 </a>
@@ -75,38 +75,38 @@ export const Navbar = () => {
 
             {/* VBS Dropdown */}
             <div className="relative group">
-              <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center">
+              <button className="text-gray-600 hover:text-[#A5292A] font-medium flex items-center">
                 Value Boosting Solutions{" "}
                 <ChevronDown className="ml-1 w-4 h-4" />
               </button>
-              <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100">
                 <a
                   href="#corporate"
-                  className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                  className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   Chief Legal Officer Service
                 </a>
                 <a
                   href="#startup"
-                  className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                  className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   Tech Legal Blueprint
                 </a>
                 <a
                   href="#dispute"
-                  className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                  className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   VC Funding Support
                 </a>
                 <a
                   href="#ngo"
-                  className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                  className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   Pitch Deck Services
                 </a>
                 <a
                   href="#ngo"
-                  className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                  className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   Cybersecurity Compliance Services
                 </a>
@@ -115,25 +115,25 @@ export const Navbar = () => {
 
             {/* Though Leadership */}
             <div className="relative group">
-              <button className="text-gray-700 hover:text-blue-600 font-medium flex items-center">
+              <button className="text-gray-600 hover:text-[#A5292A] font-medium flex items-center">
                 Thought Leadership <ChevronDown className="ml-1 w-4 h-4" />
               </button>
-              <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+              <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100">
                 <a
                   href="#corporate"
-                  className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                  className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   Incorporate your dream company in seven easy steps!
                 </a>
                 <a
                   href="#startup"
-                  className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                  className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   Never lose a deal: Master Contract Management like a PRO
                 </a>
                 <a
                   href="#dispute"
-                  className="block px-4 py-2 text-gray-700 hover:bg-blue-50 hover:text-blue-600"
+                  className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   Resolve Conflicts Fast: Ultimate Dispute Resolution Guide
                 </a>
@@ -141,17 +141,20 @@ export const Navbar = () => {
             </div>
             <a
               href="#about"
-              className="text-gray-700 hover:text-blue-600 font-medium"
+              className="text-gray-600 hover:text-[#A5292A] font-medium"
             >
               About
             </a>
             <a
               href="#contact"
-              className="text-gray-700 hover:text-blue-600 font-medium"
+              className="text-gray-600 hover:text-[#A5292A] font-medium"
             >
               Contact
             </a>
-            <button className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+            <button
+              className="text-white px-6 py-2 rounded-lg hover:opacity-90 transition-all font-medium"
+              style={{ backgroundColor: "#A5292A" }}
+            >
               Get Consultation
             </button>
           </nav>
@@ -171,33 +174,36 @@ export const Navbar = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white border-t">
+          <div className="md:hidden bg-white border-t border-gray-100">
             <div className="px-2 pt-2 pb-3 space-y-1">
               <a
                 href="#home"
-                className="block px-3 py-2 text-gray-700 hover:text-blue-600"
+                className="block px-3 py-2 text-gray-600 hover:text-[#A5292A]"
               >
                 Home
               </a>
               <a
                 href="#services"
-                className="block px-3 py-2 text-gray-700 hover:text-blue-600"
+                className="block px-3 py-2 text-gray-600 hover:text-[#A5292A]"
               >
                 Services
               </a>
               <a
                 href="#about"
-                className="block px-3 py-2 text-gray-700 hover:text-blue-600"
+                className="block px-3 py-2 text-gray-600 hover:text-[#A5292A]"
               >
                 About
               </a>
               <a
                 href="#contact"
-                className="block px-3 py-2 text-gray-700 hover:text-blue-600"
+                className="block px-3 py-2 text-gray-600 hover:text-[#A5292A]"
               >
                 Contact
               </a>
-              <button className="w-full text-left bg-blue-600 text-white px-3 py-2 rounded-lg hover:bg-blue-700">
+              <button
+                className="w-full text-left text-white px-3 py-2 rounded-lg hover:opacity-90 font-medium"
+                style={{ backgroundColor: "#A5292A" }}
+              >
                 Get Consultation
               </button>
             </div>

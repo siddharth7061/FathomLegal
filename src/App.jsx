@@ -148,26 +148,27 @@ const FathomLegal = () => {
             <nav className="hidden md:flex items-center space-x-8">
               <a
                 href="#home"
-                className="text-gray-600 hover:text-[#A5292A] font-medium"
+                className="text-[#A5292A] hover:text-[#A5292A] font-medium"
               >
                 Home
               </a>
+              {/* Services Dropdown */}
               <div className="relative group">
                 <button className="text-gray-600 hover:text-[#A5292A] font-medium flex items-center">
                   Services <ChevronDown className="ml-1 w-4 h-4" />
                 </button>
-                <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100">
+                <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                   <a
                     href="#corporate"
                     className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                   >
-                    Corporate Law
+                    General Corporate Advisory
                   </a>
                   <a
                     href="#startup"
                     className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                   >
-                    Startup Services
+                    Agreements and Policies
                   </a>
                   <a
                     href="#dispute"
@@ -179,7 +180,92 @@ const FathomLegal = () => {
                     href="#ngo"
                     className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                   >
-                    NGO & NPO
+                    Intellectual Property Services
+                  </a>
+                  <a
+                    href="#ngo"
+                    className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
+                  >
+                    Safe & Inclusive Workplaces
+                  </a>
+                  <a
+                    href="#ngo"
+                    className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
+                  >
+                    Real Estate Solution
+                  </a>
+                  <a
+                    href="#ngo"
+                    className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
+                  >
+                    REIT Solution
+                  </a>
+                </div>
+              </div>
+
+              {/* VBS Dropdown */}
+              <div className="relative group">
+                <button className="text-gray-600 hover:text-[#A5292A] font-medium flex items-center">
+                  Value Boosting Solutions{" "}
+                  <ChevronDown className="ml-1 w-4 h-4" />
+                </button>
+                <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100">
+                  <a
+                    href="#corporate"
+                    className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
+                  >
+                    Chief Legal Officer Service
+                  </a>
+                  <a
+                    href="#startup"
+                    className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
+                  >
+                    Tech Legal Blueprint
+                  </a>
+                  <a
+                    href="#dispute"
+                    className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
+                  >
+                    VC Funding Support
+                  </a>
+                  <a
+                    href="#ngo"
+                    className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
+                  >
+                    Pitch Deck Services
+                  </a>
+                  <a
+                    href="#ngo"
+                    className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
+                  >
+                    Cybersecurity Compliance Services
+                  </a>
+                </div>
+              </div>
+
+              {/* Though Leadership */}
+              <div className="relative group">
+                <button className="text-gray-600 hover:text-[#A5292A] font-medium flex items-center">
+                  Thought Leadership <ChevronDown className="ml-1 w-4 h-4" />
+                </button>
+                <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100">
+                  <a
+                    href="#corporate"
+                    className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
+                  >
+                    Incorporate your dream company in seven easy steps!
+                  </a>
+                  <a
+                    href="#startup"
+                    className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
+                  >
+                    Never lose a deal: Master Contract Management like a PRO
+                  </a>
+                  <a
+                    href="#dispute"
+                    className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
+                  >
+                    Resolve Conflicts Fast: Ultimate Dispute Resolution Guide
                   </a>
                 </div>
               </div>
@@ -270,14 +356,14 @@ const FathomLegal = () => {
             backgroundSize: "cover",
             backgroundPosition: "center",
             backgroundRepeat: "no-repeat",
-            filter: "blur(2px)",
+            filter: "blur(4px)",
           }}
         ></div>
 
         {/* Overlay */}
         <div
           className="absolute inset-0"
-          style={{ backgroundColor: "rgba(250, 250, 250, 0.9)" }}
+          style={{ backgroundColor: "rgba(250, 250, 250, 0.6)" }}
         ></div>
 
         <div className="container mx-auto px-4 relative z-10">
