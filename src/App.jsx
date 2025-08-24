@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Navbar } from "./components/Navbar";
-import Footer from "./components/Footer";
-
 import {
+  Menu,
+  X,
+  ChevronDown,
   Phone,
   Mail,
   MapPin,
@@ -15,7 +15,58 @@ import {
   ChevronRight,
 } from "lucide-react";
 
+const DisclaimerPopup = ({ isOpen, onClose }) => {
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 z-50 flex items-center justify-center">
+      {/* Slightly Dark Background Overlay */}
+      <div
+        className="absolute inset-0 bg-black opacity-50 transition-opacity"
+        onClick={onClose}
+      ></div>
+
+      {/* Popup Box */}
+      <div className="relative bg-white rounded-lg shadow-2xl max-w-2xl mx-4 p-8 max-h-[90vh] overflow-y-auto">
+        <div className="text-center">
+          <h2 className="text-2xl font-bold text-gray-800 mb-6">
+            <span style={{ color: "#A5292A" }}>Disclaimer</span>
+          </h2>
+
+          <p className="text-gray-600 leading-relaxed mb-8 text-left">
+            In accordance with the regulations set by the Bar Council of India,
+            lawyers and law firms are prohibited from actively seeking work or
+            engaging in advertising practices. By selecting the 'I Agree'
+            button, you affirm and acknowledge that you are voluntarily seeking
+            information about Fathom Legal, Advocates & Corporate Consultants
+            (FLACC) and that there has been no form of advertising, direct
+            communication, solicitation, invitation, or any other attempt,
+            either from FLACC or any of its members, to encourage work
+            engagement through this website.
+          </p>
+
+          <button
+            onClick={onClose}
+            className="text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-all"
+            style={{ backgroundColor: "#A5292A" }}
+          >
+            I Agree
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const FathomLegal = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeDropdown, setActiveDropdown] = useState(null);
+  const [showDisclaimer, setShowDisclaimer] = useState(true);
+
+  const handleDisclaimerClose = () => {
+    setShowDisclaimer(false);
+  };
+
   const services = [
     {
       icon: <Scale className="w-8 h-8" />,
@@ -77,34 +128,181 @@ const FathomLegal = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      {/* Navigation */}
-      <Navbar />
+      {/* Disclaimer Popup */}
+      <DisclaimerPopup
+        isOpen={showDisclaimer}
+        onClose={handleDisclaimerClose}
+      />
+
+      {/* Header */}
+      <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            <div className="flex items-center">
+              <div className="text-2xl font-bold text-gray-800">
+                Fathom <span style={{ color: "#A5292A" }}>Legal</span>
+              </div>
+            </div>
+
+            {/* Desktop Navigation */}
+            <nav className="hidden md:flex items-center space-x-8">
+              <a
+                href="#home"
+                className="text-gray-600 hover:text-[#A5292A] font-medium"
+              >
+                Home
+              </a>
+              <div className="relative group">
+                <button className="text-gray-600 hover:text-[#A5292A] font-medium flex items-center">
+                  Services <ChevronDown className="ml-1 w-4 h-4" />
+                </button>
+                <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100">
+                  <a
+                    href="#corporate"
+                    className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
+                  >
+                    Corporate Law
+                  </a>
+                  <a
+                    href="#startup"
+                    className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
+                  >
+                    Startup Services
+                  </a>
+                  <a
+                    href="#dispute"
+                    className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
+                  >
+                    Dispute Resolution
+                  </a>
+                  <a
+                    href="#ngo"
+                    className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
+                  >
+                    NGO & NPO
+                  </a>
+                </div>
+              </div>
+              <a
+                href="#about"
+                className="text-gray-600 hover:text-[#A5292A] font-medium"
+              >
+                About
+              </a>
+              <a
+                href="#contact"
+                className="text-gray-600 hover:text-[#A5292A] font-medium"
+              >
+                Contact
+              </a>
+              <button
+                className="text-white px-6 py-2 rounded-lg hover:opacity-90 transition-all font-medium"
+                style={{ backgroundColor: "#A5292A" }}
+              >
+                Get Consultation
+              </button>
+            </nav>
+
+            {/* Mobile menu button */}
+            <button
+              className="md:hidden"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              {isMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
+            </button>
+          </div>
+
+          {/* Mobile Navigation */}
+          {isMenuOpen && (
+            <div className="md:hidden bg-white border-t border-gray-100">
+              <div className="px-2 pt-2 pb-3 space-y-1">
+                <a
+                  href="#home"
+                  className="block px-3 py-2 text-gray-600 hover:text-[#A5292A]"
+                >
+                  Home
+                </a>
+                <a
+                  href="#services"
+                  className="block px-3 py-2 text-gray-600 hover:text-[#A5292A]"
+                >
+                  Services
+                </a>
+                <a
+                  href="#about"
+                  className="block px-3 py-2 text-gray-600 hover:text-[#A5292A]"
+                >
+                  About
+                </a>
+                <a
+                  href="#contact"
+                  className="block px-3 py-2 text-gray-600 hover:text-[#A5292A]"
+                >
+                  Contact
+                </a>
+                <button
+                  className="w-full text-left text-white px-3 py-2 rounded-lg hover:opacity-90 font-medium"
+                  style={{ backgroundColor: "#A5292A" }}
+                >
+                  Get Consultation
+                </button>
+              </div>
+            </div>
+          )}
+        </div>
+      </header>
 
       {/* Hero Section */}
       <section
         id="home"
-        className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white py-20"
+        className="text-gray-800 py-20 relative"
+        style={{ backgroundColor: "#FAFAFA" }}
       >
-        <div className="container mx-auto px-4">
+        {/* Background Image Layer with Blur */}
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1505664194779-8beaceb93744?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80')`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            filter: "blur(2px)",
+          }}
+        ></div>
+
+        {/* Overlay */}
+        <div
+          className="absolute inset-0"
+          style={{ backgroundColor: "rgba(250, 250, 250, 0.9)" }}
+        ></div>
+
+        <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
             <h1 className="text-5xl md:text-6xl font-bold mb-6">
               Where Law and Business{" "}
-              <span className="text-blue-300">MEETS</span>
+              <span style={{ color: "#A5292A" }}>MEETS</span>
             </h1>
-            <p className="text-xl md:text-2xl mb-8 text-blue-100">
+            <p className="text-xl md:text-2xl mb-8 text-gray-700">
               Expert Legal Services for Businesses and Individuals
             </p>
-            <p className="text-lg mb-10 text-blue-200 max-w-3xl mx-auto">
+            <p className="text-lg mb-10 text-gray-600 max-w-3xl mx-auto">
               Fathom Legal Advocates & Corporate Consultants is a full-service
-              law firm headquartered in Bengaluru, India. We deliver
+              law firm headquartered in New Delhi, India. We deliver
               high-quality legal services to clients across the country and the
               world.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-colors flex items-center justify-center">
+              <button
+                className="text-white px-8 py-4 rounded-lg text-lg font-semibold hover:opacity-90 transition-all flex items-center justify-center"
+                style={{ backgroundColor: "#A5292A" }}
+              >
                 Get Free Consultation <ArrowRight className="ml-2 w-5 h-5" />
               </button>
-              <button className="border-2 border-blue-300 hover:bg-blue-300 hover:text-blue-900 text-blue-300 px-8 py-4 rounded-lg text-lg font-semibold transition-colors">
+              <button className="border-2 text-gray-700 hover:bg-gray-50 px-8 py-4 rounded-lg text-lg font-semibold transition-colors border-gray-300">
                 Our Services
               </button>
             </div>
@@ -113,10 +311,10 @@ const FathomLegal = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-gray-50">
+      <section id="services" className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
               Our Legal Services
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -129,18 +327,18 @@ const FathomLegal = () => {
             {services.map((service, index) => (
               <div
                 key={index}
-                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow group"
+                className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 group"
               >
-                <div className="text-blue-600 mb-4 group-hover:text-blue-700 transition-colors">
+                <div className="text-[#A5292A] mb-4 group-hover:opacity-80 transition-opacity">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                <h3 className="text-xl font-semibold text-gray-800 mb-3">
                   {service.title}
                 </h3>
                 <p className="text-gray-600 mb-4">{service.description}</p>
                 <a
                   href="#"
-                  className="text-blue-600 font-medium hover:text-blue-700 flex items-center"
+                  className="text-[#A5292A] font-medium hover:opacity-80 flex items-center"
                 >
                   Learn More <ChevronRight className="ml-1 w-4 h-4" />
                 </a>
@@ -151,11 +349,11 @@ const FathomLegal = () => {
       </section>
 
       {/* Practice Areas */}
-      <section className="py-20 bg-white">
+      <section className="py-20" style={{ backgroundColor: "#FAFAFA" }}>
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+              <h2 className="text-4xl font-bold text-gray-800 mb-6">
                 Practice Areas
               </h2>
               <p className="text-lg text-gray-600 mb-8">
@@ -167,34 +365,40 @@ const FathomLegal = () => {
                 {practiceAreas.map((area, index) => (
                   <div
                     key={index}
-                    className="flex items-center p-4 bg-blue-50 rounded-lg"
+                    className="flex items-center p-4 bg-white rounded-lg border border-gray-100"
                   >
-                    <div className="w-2 h-2 bg-blue-600 rounded-full mr-3"></div>
-                    <span className="text-gray-800 font-medium">{area}</span>
+                    <div
+                      className="w-2 h-2 rounded-full mr-3"
+                      style={{ backgroundColor: "#A5292A" }}
+                    ></div>
+                    <span className="text-gray-700 font-medium">{area}</span>
                   </div>
                 ))}
               </div>
             </div>
             <div className="lg:pl-8">
-              <div className="bg-gradient-to-br from-blue-600 to-blue-800 p-8 rounded-2xl text-white">
+              <div
+                className="p-8 rounded-2xl text-white"
+                style={{ backgroundColor: "#A5292A" }}
+              >
                 <h3 className="text-2xl font-bold mb-4">
                   Why Choose Fathom Legal?
                 </h3>
                 <ul className="space-y-4">
                   <li className="flex items-start">
-                    <div className="w-2 h-2 bg-blue-300 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <div className="w-2 h-2 bg-white bg-opacity-70 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                     <span>Dedicated team of experienced professionals</span>
                   </li>
                   <li className="flex items-start">
-                    <div className="w-2 h-2 bg-blue-300 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <div className="w-2 h-2 bg-white bg-opacity-70 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                     <span>Specialized expertise in startup ecosystem</span>
                   </li>
                   <li className="flex items-start">
-                    <div className="w-2 h-2 bg-blue-300 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <div className="w-2 h-2 bg-white bg-opacity-70 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                     <span>Client-focused approach with ethical governance</span>
                   </li>
                   <li className="flex items-start">
-                    <div className="w-2 h-2 bg-blue-300 rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                    <div className="w-2 h-2 bg-white bg-opacity-70 rounded-full mt-2 mr-3 flex-shrink-0"></div>
                     <span>Nationwide and international service delivery</span>
                   </li>
                 </ul>
@@ -205,10 +409,10 @@ const FathomLegal = () => {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+            <h2 className="text-4xl font-bold text-gray-800 mb-4">
               Client Testimonials
             </h2>
             <p className="text-xl text-gray-600">
@@ -218,7 +422,10 @@ const FathomLegal = () => {
 
           <div className="grid md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="bg-white p-8 rounded-xl shadow-lg">
+              <div
+                key={index}
+                className="bg-white p-8 rounded-xl shadow-sm border border-gray-100"
+              >
                 <div className="flex mb-4">
                   {[...Array(testimonial.rating)].map((_, i) => (
                     <Star
@@ -231,7 +438,7 @@ const FathomLegal = () => {
                   "{testimonial.text}"
                 </p>
                 <div>
-                  <div className="font-semibold text-gray-900">
+                  <div className="font-semibold text-gray-800">
                     {testimonial.name}
                   </div>
                   <div className="text-sm text-gray-500">
@@ -245,76 +452,87 @@ const FathomLegal = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-blue-900 text-white">
+      <section
+        id="contact"
+        className="py-20 text-white"
+        style={{ backgroundColor: "#A5292A" }}
+      >
         <div className="container mx-auto px-4">
           <div className="grid lg:grid-cols-2 gap-12">
             <div>
               <h2 className="text-4xl font-bold mb-6">Get in Touch</h2>
-              <p className="text-xl text-blue-100 mb-8">
+              <p className="text-xl text-white text-opacity-90 mb-8">
                 Ready to discuss your legal needs? Contact our experienced team
                 for professional legal consultation.
               </p>
 
               <div className="space-y-6">
                 <div className="flex items-center">
-                  <MapPin className="w-6 h-6 text-blue-300 mr-4" />
+                  <MapPin className="w-6 h-6 text-white text-opacity-70 mr-4" />
                   <div>
                     <div className="font-semibold">Office Address</div>
-                    <div className="text-blue-100">Bengaluru, India</div>
+                    <div className="text-white text-opacity-80">
+                      New Delhi, India
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-center">
-                  <Phone className="w-6 h-6 text-blue-300 mr-4" />
+                  <Phone className="w-6 h-6 text-white text-opacity-70 mr-4" />
                   <div>
                     <div className="font-semibold">Phone</div>
-                    <div className="text-blue-100">+91-XX-XXXX-XXXX</div>
+                    <div className="text-white text-opacity-80">
+                      +91-XX-XXXX-XXXX
+                    </div>
                   </div>
                 </div>
                 <div className="flex items-center">
-                  <Mail className="w-6 h-6 text-blue-300 mr-4" />
+                  <Mail className="w-6 h-6 text-white text-opacity-70 mr-4" />
                   <div>
                     <div className="font-semibold">Email</div>
-                    <div className="text-blue-100">assist@fathomlegal.com​</div>
+                    <div className="text-white text-opacity-80">
+                      info@fathomlegal.com
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-xl text-gray-900">
+            <div className="bg-white p-8 rounded-xl text-gray-800">
               <h3 className="text-2xl font-bold mb-6">Send us a Message</h3>
               <div className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-4">
                   <input
                     type="text"
                     placeholder="First Name"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#A5292A] focus:ring-opacity-20 focus:border-[#A5292A] outline-none"
                   />
                   <input
                     type="text"
                     placeholder="Last Name"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#A5292A] focus:ring-opacity-20 focus:border-[#A5292A] outline-none"
                   />
                 </div>
                 <input
                   type="email"
                   placeholder="Email Address"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#A5292A] focus:ring-opacity-20 focus:border-[#A5292A] outline-none"
                 />
                 <input
                   type="tel"
                   placeholder="Phone Number"
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#A5292A] focus:ring-opacity-20 focus:border-[#A5292A] outline-none"
                 />
                 <textarea
                   placeholder="Tell us about your legal needs"
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
+                  className="w-full px-4 py-3 border border-gray-200 rounded-lg focus:ring-2 focus:ring-[#A5292A] focus:ring-opacity-20 focus:border-[#A5292A] outline-none"
                 ></textarea>
                 <button
                   onClick={() =>
                     alert("Message sent! We will contact you soon.")
                   }
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 px-6 rounded-lg font-semibold transition-colors"
+                  className="w-full text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 transition-all"
+                  style={{ backgroundColor: "#A5292A" }}
                 >
                   Send Message
                 </button>
@@ -325,7 +543,101 @@ const FathomLegal = () => {
       </section>
 
       {/* Footer */}
-      <Footer />
+      <footer className="bg-gray-800 text-white py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <div className="text-2xl font-bold mb-4">
+                Fathom <span style={{ color: "#A5292A" }}>Legal</span>
+              </div>
+              <p className="text-gray-300 mb-4">
+                Expert legal services for businesses and individuals with a
+                focus on startup ecosystem and SMB sector.
+              </p>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-semibold mb-4">Services</h4>
+              <ul className="space-y-2 text-gray-300">
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Corporate Law
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Startup Services
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Dispute Resolution
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    NGO & NPO
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-semibold mb-4">Company</h4>
+              <ul className="space-y-2 text-gray-300">
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    About Us
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Our Team
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Careers
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Contact
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-semibold mb-4">Legal</h4>
+              <ul className="space-y-2 text-gray-300">
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Privacy Policy
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Terms of Service
+                  </a>
+                </li>
+                <li>
+                  <a href="#" className="hover:text-white transition-colors">
+                    Disclaimer
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-300">
+            <p>
+              &copy; 2024 Fathom Legal Advocates & Corporate Consultants. All
+              rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
