@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
-
+import logo from "../../assets/cropped-icon-red-192x192.png";
+import { NavLink } from "react-router-dom";
 export const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
@@ -9,6 +10,9 @@ export const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
+            <div className="w-12 h-12">
+              <img src={logo} />
+            </div>
             <div className="text-2xl font-bold text-gray-800">
               Fathom <span style={{ color: "#A5292A" }}>Legal</span>
             </div>
@@ -16,12 +20,12 @@ export const Navbar = () => {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center space-x-8">
-            <a
-              href="#home"
+            <NavLink
+              to="/"
               className="text-[#A5292A] hover:text-[#A5292A] font-medium"
             >
               Home
-            </a>
+            </NavLink>
             {/* Services Dropdown */}
             <div className="relative group">
               <button className="text-gray-600 hover:text-[#A5292A] font-medium flex items-center">
@@ -139,12 +143,12 @@ export const Navbar = () => {
                 </a>
               </div>
             </div>
-            <a
-              href="#about"
-              className="text-gray-600 hover:text-[#A5292A] font-medium"
+            <NavLink
+              className="block px-3 py-2 text-gray-600 hover:text-[#A5292A]"
+              to="/aboutus"
             >
-              About
-            </a>
+              About Us
+            </NavLink>
             <a
               href="#contact"
               className="text-gray-600 hover:text-[#A5292A] font-medium"
@@ -176,24 +180,25 @@ export const Navbar = () => {
         {isMenuOpen && (
           <div className="md:hidden bg-white border-t border-gray-100">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              <a
-                href="#home"
+              <NavLink
                 className="block px-3 py-2 text-gray-600 hover:text-[#A5292A]"
+                to="/home"
               >
                 Home
-              </a>
+              </NavLink>
               <a
                 href="#services"
                 className="block px-3 py-2 text-gray-600 hover:text-[#A5292A]"
               >
                 Services
               </a>
-              <a
-                href="#about"
+
+              <NavLink
                 className="block px-3 py-2 text-gray-600 hover:text-[#A5292A]"
+                to="/aboutus"
               >
-                About
-              </a>
+                About Us
+              </NavLink>
               <a
                 href="#contact"
                 className="block px-3 py-2 text-gray-600 hover:text-[#A5292A]"
