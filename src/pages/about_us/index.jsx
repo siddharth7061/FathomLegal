@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Navbar } from "../../components/Navbar";
+import philo_image from "../../assets/2024-02-Legal-Consult.webp";
+import founder_image from "../../assets/2024-06-ishita-fathom-225x300.jpg";
 import {
   Menu,
   X,
@@ -213,7 +215,7 @@ const AboutUs = () => {
             <div className="lg:pl-8">
               <div className="relative">
                 <img
-                  src="https://images.unsplash.com/photo-1556157382-97eda2d62296?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+                  src={philo_image}
                   alt="Legal consultation"
                   className="rounded-2xl shadow-lg w-full h-96 object-cover"
                 />
@@ -245,7 +247,7 @@ const AboutUs = () => {
               <div className="text-center">
                 <div className="relative inline-block">
                   <img
-                    src="https://images.unsplash.com/photo-1594736797933-d0ad6ac80cc8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1469&q=80"
+                    src={founder_image}
                     alt="Adv. Ishita Sharma"
                     className="w-80 h-80 rounded-2xl object-cover shadow-lg mx-auto"
                   />
