@@ -138,7 +138,7 @@ const Home = () => {
       />
 
       {/* Nav Bar Component */}
-      <Navbar />
+      <Navbar page="home" />
 
       {/* Hero Section */}
       <section

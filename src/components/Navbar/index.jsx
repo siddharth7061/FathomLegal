@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Menu, X, ChevronDown } from "lucide-react";
 import logo from "../../assets/cropped-icon-red-192x192.png";
 import { NavLink } from "react-router-dom";
-export const Navbar = () => {
+export const Navbar = ({ page }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -22,15 +22,26 @@ export const Navbar = () => {
           <nav className="hidden md:flex items-center space-x-8">
             <NavLink
               to="/"
-              className="text-[#A5292A] hover:text-[#A5292A] font-medium"
+              className={
+                page === "home"
+                  ? "text-[#A5292A] hover:text-[#A5292A] font-medium flex items-center"
+                  : "text-gray-600 hover:text-[#A5292A] font-medium flex items-center"
+              }
             >
               Home
             </NavLink>
             {/* Services Dropdown */}
             <div className="relative group">
-              <button className="text-gray-600 hover:text-[#A5292A] font-medium flex items-center">
+              <NavLink
+                to="/services"
+                className={
+                  page === "services"
+                    ? "text-[#A5292A] hover:text-[#A5292A] font-medium flex items-center"
+                    : "text-gray-600 hover:text-[#A5292A] font-medium flex items-center"
+                }
+              >
                 Services <ChevronDown className="ml-1 w-4 h-4" />
-              </button>
+              </NavLink>
               <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
                 <a
                   href="#corporate"
@@ -79,10 +90,17 @@ export const Navbar = () => {
 
             {/* VBS Dropdown */}
             <div className="relative group">
-              <button className="text-gray-600 hover:text-[#A5292A] font-medium flex items-center">
+              <NavLink
+                to="/services"
+                className={
+                  page === "vbs"
+                    ? "text-[#A5292A] hover:text-[#A5292A] font-medium flex items-center"
+                    : "text-gray-600 hover:text-[#A5292A] font-medium flex items-center"
+                }
+              >
                 Value Boosting Solutions{" "}
                 <ChevronDown className="ml-1 w-4 h-4" />
-              </button>
+              </NavLink>
               <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100">
                 <a
                   href="#corporate"
@@ -117,11 +135,19 @@ export const Navbar = () => {
               </div>
             </div>
 
-            {/* Though Leadership */}
+            {/* Thought Leadership */}
             <div className="relative group">
-              <button className="text-gray-600 hover:text-[#A5292A] font-medium flex items-center">
-                Thought Leadership <ChevronDown className="ml-1 w-4 h-4" />
-              </button>
+              <NavLink
+                to="/thoughtleadership"
+                className={
+                  page === "thoughtleadership"
+                    ? "text-[#A5292A] hover:text-[#A5292A] font-medium flex items-center"
+                    : "text-gray-600 hover:text-[#A5292A] font-medium flex items-center"
+                }
+              >
+                Thought Leadership
+                <ChevronDown className="ml-1 w-4 h-4" />
+              </NavLink>
               <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100">
                 <a
                   href="#corporate"
@@ -144,7 +170,11 @@ export const Navbar = () => {
               </div>
             </div>
             <NavLink
-              className="block px-3 py-2 text-gray-600 hover:text-[#A5292A]"
+              className={
+                page === "aboutus"
+                  ? "text-[#A5292A] hover:text-[#A5292A] font-medium flex items-center"
+                  : "text-gray-600 hover:text-[#A5292A] font-medium flex items-center"
+              }
               to="/aboutus"
             >
               About Us
@@ -182,16 +212,17 @@ export const Navbar = () => {
             <div className="px-2 pt-2 pb-3 space-y-1">
               <NavLink
                 className="block px-3 py-2 text-gray-600 hover:text-[#A5292A]"
-                to="/home"
+                to="/"
               >
                 Home
               </NavLink>
-              <a
-                href="#services"
+
+              <NavLink
                 className="block px-3 py-2 text-gray-600 hover:text-[#A5292A]"
+                to="/services"
               >
                 Services
-              </a>
+              </NavLink>
 
               <NavLink
                 className="block px-3 py-2 text-gray-600 hover:text-[#A5292A]"
