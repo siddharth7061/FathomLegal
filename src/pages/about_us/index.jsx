@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Navbar } from "../../components/Navbar";
 import philo_image from "../../assets/2024-02-Legal-Consult.webp";
-import founder_image from "../../assets/2024-06-ishita-fathom-225x300.jpg";
+import founder_image from "../../assets/2024-06-ishita-fathom.jpg";
 import {
   Menu,
   X,
@@ -249,7 +249,7 @@ const AboutUs = () => {
                   <img
                     src={founder_image}
                     alt="Adv. Ishita Sharma"
-                    className="w-80 h-80 rounded-2xl object-cover shadow-lg mx-auto"
+                    className="w-120 h-150 rounded-2xl object-cover shadow-lg mx-auto"
                   />
                   <div
                     className="absolute inset-0 rounded-2xl"
