@@ -4,6 +4,7 @@ import AboutUs from "./pages/about_us";
 import ServicesPage from "./pages/services";
 import GeneralCorporateAdvisory from "./pages/services/gneralCorporateAdvisory";
 import AgreementsAndPolicies from "./pages/services/agreementAndPolicies";
+import DisputeResolution from "./pages/services/disputeResolution";
 
 const App = () => {
   return (
@@ -18,6 +19,10 @@ const App = () => {
       <Route
         path="/services/agreementandpolicies"
         element={<AgreementsAndPolicies />}
+      />
+      <Route
+        path="/services/disputeresolution"
+        element={<DisputeResolution />}
       />
     </Routes>
   );

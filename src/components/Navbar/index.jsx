@@ -55,12 +55,12 @@ export const Navbar = ({ page }) => {
                 >
                   Agreement and Policies
                 </NavLink>
-                <a
-                  href="#dispute"
+                <NavLink
+                  to="/services/disputeresolution"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   Dispute Resolution
-                </a>
+                </NavLink>
                 <a
                   href="#ngo"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"

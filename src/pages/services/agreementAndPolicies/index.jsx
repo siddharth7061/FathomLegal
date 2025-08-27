@@ -150,27 +150,42 @@ const AgreementsAndPolicies = () => {
               </h2>
               <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
                 <p className="mb-6">
-                  We collect personal information from users when they register
-                  on our website, place an order, subscribe to our newsletter,
-                  respond to a survey, fill out a form, or use certain other
-                  site features. This information may include name, email
-                  address, mailing address, phone number, credit card
-                  information, and other relevant details necessary for
-                  providing our services.
+                  The Company collects and stores the User’s personal
+                  information provided from time to time on the Website. This
+                  includes but is not limited to username, passwords, email
+                  address, name, address, age, date of birth, sex, nationality,
+                  shopping preferences, and browsing history. The User is aware
+                  that this information will be used to customize and enhance
+                  the Website for improved user experiences. The Website may
+                  automatically track certain information about the User based
+                  on their IP address and browsing behavior. This information is
+                  used for internal research on user demographics, interests,
+                  and behavior to improve the Website and cater to user
+                  interests. The User’s consent to this Policy allows the
+                  Website to collect information about the User’s buying
+                  behavior and trends if the User chooses to purchase products
+                  or services from the Website.
                 </p>
                 <p className="mb-6">
-                  The information we collect is used to personalize user
-                  experience, improve our website, enhance customer service,
-                  process transactions, send periodic emails regarding orders or
-                  other products and services, and follow up after
-                  correspondence (live chat, email, or phone inquiries).
+                  The User’s posts, messages, reviews, and feedback on the
+                  Website may be collected, stored, and used indefinitely by the
+                  Company. Such information may be utilized to resolve disputes,
+                  provide customer support, and comply with applicable laws. The
+                  User is aware that while some sections of the Website can be
+                  accessed without registration, certain activities require
+                  valid personal information for registration purposes. The
+                  contact information provided may be used to send offers and
+                  promotions to the User.
                 </p>
                 <p className="mb-6">
-                  We implement appropriate data collection, storage, and
-                  processing practices and security measures to protect against
-                  unauthorized access, alteration, disclosure, or destruction of
-                  personal information, username, password, transaction
-                  information, and data stored on our site.
+                  The Company may occasionally request the User to complete
+                  online surveys or write reviews for products or services. The
+                  User’s consent to this Policy allows the Website to use such
+                  data to customize the Website and provide tailored content to
+                  the User. The Website is not compelled to store, upload,
+                  publish, or display content, reviews, surveys, or feedback
+                  submitted by the User. The Company may remove any such content
+                  at its discretion without notice to the User.”
                 </p>
               </div>
             </div>
@@ -182,27 +197,24 @@ const AgreementsAndPolicies = () => {
               </h2>
               <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
                 <p className="mb-6">
-                  Our website uses cookies to enhance user experience. Cookies
-                  are small files that a site or its service provider transfers
-                  to your computer's hard drive through your web browser (if you
-                  allow) that enables the site's or service provider's systems
-                  to recognize your browser and capture and remember certain
-                  information.
+                  A “Cookie” is a small piece of information stored by a web
+                  server on a web browser, allowing the browser to remember
+                  specific user information for a more personalized experience.
+                  The Website places both permanent and temporary cookies on the
+                  User’s computer’s hard drive and web browser.
                 </p>
                 <p className="mb-6">
-                  We use cookies to help us remember and process items in your
-                  shopping cart, understand and save your preferences for future
-                  visits, keep track of advertisements, and compile aggregate
-                  data about site traffic and site interaction so that we can
-                  offer better site experiences and tools in the future.
+                  The Website uses data collection devices like cookies on
+                  certain pages to analyze web page flow, measure promotional
+                  effectiveness, and enhance trust and safety. Some features of
+                  the Website are available only through the use of cookies. The
+                  User may decline cookies, but this may limit certain features.
                 </p>
                 <p className="mb-6">
-                  You can choose to have your computer warn you each time a
-                  cookie is being sent, or you can choose to turn off all
-                  cookies. You do this through your browser settings. If you
-                  turn cookies off, some features will be disabled that make
-                  your site experience more efficient, and some of our services
-                  will not function properly.
+                  Third-party advertising companies may use the User’s
+                  information to provide customized advertisements. The Website
+                  may contain links to other websites, and the Company is not
+                  responsible for their privacy practices or content.
                 </p>
               </div>
             </div>
@@ -214,30 +226,22 @@ const AgreementsAndPolicies = () => {
               </h2>
               <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
                 <p className="mb-6">
-                  We do not sell, trade, or otherwise transfer to outside
-                  parties your personally identifiable information unless we
-                  provide you with advance notice. This does not include website
-                  hosting partners and other parties who assist us in operating
-                  our website, conducting our business, or serving our users, so
-                  long as those parties agree to keep this information
-                  confidential.
+                  The Company may share the User’s personal information with
+                  corporate entities and affiliates to detect and prevent
+                  identity theft, fraud, and abuse of the Website’s services,
+                  and to facilitate joint or co-branded services.
                 </p>
                 <p className="mb-6">
-                  We may also release information when its release is
-                  appropriate to comply with the law, enforce our site policies,
-                  or protect ours or others' rights, property, or safety.
-                  However, non-personally identifiable visitor information may
-                  be provided to other parties for marketing, advertising, or
-                  other uses.
+                  The Website may disclose personal information if required by
+                  law or in good faith belief that disclosure is necessary to
+                  respond to legal processes or to protect the rights, property,
+                  or personal safety of its users.
                 </p>
                 <p className="mb-6">
-                  We may share information with trusted third parties who assist
-                  us in operating our website, conducting our business, or
-                  servicing you, so long as those parties agree to keep this
-                  information confidential. We may also release your information
-                  when we believe release is appropriate to comply with the law,
-                  enforce our site policies, or protect our or others' rights,
-                  property, or safety.
+                  In the event of a merger, acquisition, or restructuring, the
+                  User’s personal information may be shared/sold with other
+                  business entities, with continued adherence to the Terms and
+                  Policy.”
                 </p>
               </div>
             </div>
@@ -249,25 +253,11 @@ const AgreementsAndPolicies = () => {
               </h2>
               <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
                 <p className="mb-6">
-                  We adopt appropriate data collection, storage, and processing
-                  practices and security measures to protect against
-                  unauthorized access, alteration, disclosure, or destruction of
-                  your personal information, username, password, transaction
-                  information, and data stored on our site.
-                </p>
-                <p className="mb-6">
-                  Sensitive and private data exchange between the site and its
-                  users happens over a SSL secured communication channel and is
-                  encrypted and protected with digital signatures. Our website
-                  is also in compliance with PCI vulnerability standards to
-                  create as secure of an environment as possible for users.
-                </p>
-                <p className="mb-6">
-                  Despite our security measures, we cannot guarantee the
-                  absolute security of your information. Any transmission of
-                  personal information is at your own risk. We are not
-                  responsible for circumvention of any privacy settings or
-                  security measures contained on the website.
+                  The Website ensures secure and protected transactions. Any
+                  information entered by the User during transactions is
+                  encrypted to prevent unauthorized disclosure to third parties.
+                  Credit and debit card information is not received, stored, or
+                  retained by the Company/Website.
                 </p>
               </div>
             </div>
@@ -279,24 +269,11 @@ const AgreementsAndPolicies = () => {
               </h2>
               <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
                 <p className="mb-6">
-                  Occasionally, at our discretion, we may include or offer third
-                  party products or services on our website. These third party
-                  sites have separate and independent privacy policies. We
-                  therefore have no responsibility or liability for the content
-                  and activities of these linked sites.
-                </p>
-                <p className="mb-6">
-                  Nonetheless, we seek to protect the integrity of our site and
-                  welcome any feedback about these sites. Third party
-                  advertisements on our site may use cookies and web beacons in
-                  their advertisements to collect non-personally identifiable
-                  information about your visits to our site and other sites.
-                </p>
-                <p className="mb-6">
-                  We do not control the collection or use of information by
-                  third party advertisers. You should contact these advertisers
-                  directly if you have any questions about their use of the
-                  information they collect.
+                  Third-party advertising companies may use the User’s
+                  information to provide customised advertisements. The Website
+                  may contain links to other websites collecting personally
+                  identifiable information about the User. The Company/Website
+                  is not responsible for their privacy practices or content.
                 </p>
               </div>
             </div>
@@ -308,23 +285,10 @@ const AgreementsAndPolicies = () => {
               </h2>
               <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
                 <p className="mb-6">
-                  By using our site, you consent to our privacy policy and agree
-                  to the terms and conditions set forth herein. Your continued
-                  use of the website following the posting of changes to this
-                  policy will be deemed your acceptance of those changes.
-                </p>
-                <p className="mb-6">
-                  If you do not agree with any part of this privacy policy, you
-                  must discontinue use of our website and services immediately.
-                  We reserve the right to modify this privacy policy at any time
-                  without prior notice. Changes will be effective immediately
-                  upon posting on the website.
-                </p>
-                <p className="mb-6">
-                  It is your responsibility to review this privacy policy
-                  periodically for updates. Your continued use of our website
-                  after any modifications indicates your acceptance of the
-                  updated privacy policy.
+                  By using the Website and providing information to the Company
+                  through the Website, the User consents to the collection and
+                  use of the disclosed information in accordance with this
+                  Policy, including the sharing/divulging of information.
                 </p>
               </div>
             </div>
@@ -340,13 +304,6 @@ const AgreementsAndPolicies = () => {
                   the Grievance Officer: Saurabh Jetly (E-mail:
                   communications@fathomlegal.com).
                 </p>
-                <p className="mb-6">
-                  The Grievance Officer will address your concerns and provide
-                  resolution within a reasonable timeframe. All grievances will
-                  be handled in accordance with applicable laws and regulations.
-                  Please provide detailed information about your concern to
-                  facilitate prompt resolution.
-                </p>
               </div>
             </div>
 
@@ -357,31 +314,18 @@ const AgreementsAndPolicies = () => {
               </h2>
               <div className="prose prose-lg max-w-none text-gray-600 leading-relaxed">
                 <p className="mb-6">
-                  Any disputes arising out of or in connection with this privacy
-                  policy shall be resolved through alternate dispute resolution
-                  mechanisms including mediation and arbitration as per the
-                  Arbitration and Conciliation Act, 2015.
-                </p>
-                <p className="mb-6">
-                  The arbitration proceedings shall be conducted in English and
-                  shall take place in New Delhi, India. The arbitral tribunal
-                  shall consist of a sole arbitrator appointed by mutual consent
-                  of the parties. If the parties fail to agree on the
-                  appointment of an arbitrator, the appointment shall be made by
-                  the Delhi High Court.
-                </p>
-                <p className="mb-6">
-                  This privacy policy and any disputes arising therefrom shall
-                  be governed by the laws of India. The courts at New Delhi,
-                  India shall have exclusive jurisdiction over any disputes that
-                  cannot be resolved through alternate dispute resolution
-                  mechanisms.
-                </p>
-                <p className="mb-6">
-                  Before initiating any formal dispute resolution proceedings,
-                  the parties agree to attempt resolution through good faith
-                  negotiations for a period of thirty (30) days from the date
-                  the dispute arises.
+                  Any disputes arising from this Policy will be resolved through
+                  an Alternate Dispute Resolution mechanism, including mediation
+                  and arbitration, as detailed in this section. Indian laws
+                  govern the Terms, Policy, and any other agreements between the
+                  Parties, with exclusive jurisdiction of the Courts at New
+                  Delhi, India This Policy constitutes an agreement between the
+                  User and the Company, subject to the rules, guidelines,
+                  policies, terms, and conditions applicable to any service
+                  provided by the Website. The User’s act of visiting the
+                  Website constitutes acceptance of this Policy and the Terms.
+                  Amendments to this Policy are effective immediately upon
+                  publication.
                 </p>
               </div>
             </div>
