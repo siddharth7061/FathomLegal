@@ -5,6 +5,8 @@ import ServicesPage from "./pages/services";
 import GeneralCorporateAdvisory from "./pages/services/gneralCorporateAdvisory";
 import AgreementsAndPolicies from "./pages/services/agreementAndPolicies";
 import DisputeResolution from "./pages/services/disputeResolution";
+import IntellectualProperty from "./pages/services/intellectualProperty";
+import SafeInclusiveWorkplaces from "./pages/services/safeWorkplace";
 
 const App = () => {
   return (
@@ -24,6 +26,11 @@ const App = () => {
         path="/services/disputeresolution"
         element={<DisputeResolution />}
       />
+      <Route
+        path="/services/intellectualproperty"
+        element={<IntellectualProperty />}
+      />
+      <Route path="/services/ankush" element={<SafeInclusiveWorkplaces />} />
     </Routes>
   );
 };

@@ -61,18 +61,18 @@ export const Navbar = ({ page }) => {
                 >
                   Dispute Resolution
                 </NavLink>
-                <a
-                  href="#ngo"
+                <NavLink
+                  to="/services/intellectualproperty"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   Intellectual Property Services
-                </a>
-                <a
-                  href="#ngo"
+                </NavLink>
+                <NavLink
+                  to="/services/ankush"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   Safe & Inclusive Workplaces
-                </a>
+                </NavLink>
                 <a
                   href="#ngo"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
