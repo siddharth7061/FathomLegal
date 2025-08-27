@@ -49,12 +49,12 @@ export const Navbar = ({ page }) => {
                 >
                   General Corporate Advisory
                 </NavLink>
-                <a
-                  href="#startup"
+                <NavLink
+                  to="/services/agreementandpolicies"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
-                  Agreements and Policies
-                </a>
+                  Agreement and Policies
+                </NavLink>
                 <a
                   href="#dispute"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
