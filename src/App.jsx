@@ -48,7 +48,7 @@ const App = () => {
         element={<ValueBoostingSolutions />}
       />
       <Route
-        path="/valueboostingsolutions/chiefLegalOfficerService"
+        path="/valueboostingsolutions/chieflegalofficerservice"
         element={<ChiefLegalOfficerService />}
       />
     </Routes>

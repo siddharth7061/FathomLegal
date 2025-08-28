@@ -102,12 +102,12 @@ export const Navbar = ({ page }) => {
                 <ChevronDown className="ml-1 w-4 h-4" />
               </NavLink>
               <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100">
-                <a
-                  href="#corporate"
+                <NavLink
+                  to="/valueboostingsolutions/chieflegalofficerservice"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   Chief Legal Officer Service
-                </a>
+                </NavLink>
                 <a
                   href="#startup"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
