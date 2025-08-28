@@ -8,6 +8,7 @@ import DisputeResolution from "./pages/services/disputeResolution";
 import IntellectualProperty from "./pages/services/intellectualProperty";
 import SafeInclusiveWorkplaces from "./pages/services/safeWorkplace";
 import RealEstateSolutions from "./pages/services/realEstateSolutions";
+import REITSolutions from "./pages/services/reitSolutions";
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
         path="/services/realestatesolutions"
         element={<RealEstateSolutions />}
       />
+      <Route path="/services/reitsolutions" element={<REITSolutions />} />
     </Routes>
   );
 };

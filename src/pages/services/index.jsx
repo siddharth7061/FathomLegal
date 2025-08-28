@@ -69,7 +69,7 @@ const ServicesPage = () => {
       description:
         "End-to-end real estate legal services including due diligence, transactions, and property law matters.",
       slug: "real-estate",
-      url: "/services/realestate",
+      url: "/services/realestatesolutions",
     },
     {
       icon: <Lightbulb className="w-8 h-8" />,

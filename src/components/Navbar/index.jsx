@@ -79,12 +79,12 @@ export const Navbar = ({ page }) => {
                 >
                   Real Estate Solution
                 </NavLink>
-                <a
-                  href="#ngo"
+                <NavLink
+                  to="/services/reitsolutions"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   REIT Solution
-                </a>
+                </NavLink>
               </div>
             </div>
 
