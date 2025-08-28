@@ -10,6 +10,7 @@ import SafeInclusiveWorkplaces from "./pages/services/safeWorkplace";
 import RealEstateSolutions from "./pages/services/realEstateSolutions";
 import REITSolutions from "./pages/services/reitSolutions";
 import ValueBoostingSolutions from "./pages/valueBoostingSolutions";
+import ChiefLegalOfficerService from "./pages/valueBoostingSolutions/chiefLegalOfficerService";
 
 const App = () => {
   return (
@@ -45,6 +46,10 @@ const App = () => {
       <Route
         path="/valueboostingsolutions"
         element={<ValueBoostingSolutions />}
+      />
+      <Route
+        path="/valueboostingsolutions/chiefLegalOfficerService"
+        element={<ChiefLegalOfficerService />}
       />
     </Routes>
   );

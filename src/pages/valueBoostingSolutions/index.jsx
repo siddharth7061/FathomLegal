@@ -111,7 +111,8 @@ const ValueBoostingSolutions = () => {
               WELCOME TO FATHOM LEGAL
             </p>
             <h1 className="text-5xl md:text-6xl font-bold mb-8 text-gray-800">
-              Value Boosting Solutions
+              Value Boosting
+              <span style={{ color: "#A5292A" }}> Solutions</span>
             </h1>
           </div>
 
