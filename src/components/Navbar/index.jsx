@@ -91,7 +91,7 @@ export const Navbar = ({ page }) => {
             {/* VBS Dropdown */}
             <div className="relative group">
               <NavLink
-                to="/services"
+                to="/valueboostingsolutions"
                 className={
                   page === "vbs"
                     ? "text-[#A5292A] hover:text-[#A5292A] font-medium flex items-center"
