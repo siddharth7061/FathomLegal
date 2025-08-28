@@ -73,12 +73,12 @@ export const Navbar = ({ page }) => {
                 >
                   Safe & Inclusive Workplaces
                 </NavLink>
-                <a
-                  href="#ngo"
+                <NavLink
+                  to="/services/realestatesolutions"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   Real Estate Solution
-                </a>
+                </NavLink>
                 <a
                   href="#ngo"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"

@@ -7,6 +7,7 @@ import AgreementsAndPolicies from "./pages/services/agreementAndPolicies";
 import DisputeResolution from "./pages/services/disputeResolution";
 import IntellectualProperty from "./pages/services/intellectualProperty";
 import SafeInclusiveWorkplaces from "./pages/services/safeWorkplace";
+import RealEstateSolutions from "./pages/services/realEstateSolutions";
 
 const App = () => {
   return (
@@ -31,6 +32,10 @@ const App = () => {
         element={<IntellectualProperty />}
       />
       <Route path="/services/ankush" element={<SafeInclusiveWorkplaces />} />
+      <Route
+        path="/services/realestatesolutions"
+        element={<RealEstateSolutions />}
+      />
     </Routes>
   );
 };
