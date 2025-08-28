@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Navbar } from "../../components/Navbar";
+import Footer from "../../components/Footer";
+import { NavLink } from "react-router-dom";
 import {
   Menu,
   X,
@@ -35,6 +37,7 @@ const ServicesPage = () => {
       description:
         "Comprehensive corporate governance, compliance, and strategic legal advisory services for businesses of all sizes.",
       slug: "corporate-advisory",
+      url: "/services/generalcorporateadvisory",
     },
     {
       icon: <UserCheck className="w-8 h-8" />,
@@ -42,6 +45,7 @@ const ServicesPage = () => {
       description:
         "Specialized workplace safety solutions, harassment prevention, and inclusive culture development programs.",
       slug: "workplace-safety",
+      url: "/services/ankush",
     },
     {
       icon: <Gavel className="w-8 h-8" />,
@@ -49,6 +53,7 @@ const ServicesPage = () => {
       description:
         "Expert mediation, arbitration, and litigation services to resolve commercial and civil disputes effectively.",
       slug: "dispute-resolution",
+      url: "/services/disputeresolution",
     },
     {
       icon: <Building className="w-8 h-8" />,
@@ -56,6 +61,7 @@ const ServicesPage = () => {
       description:
         "Complete Real Estate Investment Trust structuring, compliance, and management services for investors.",
       slug: "reit-solutions",
+      url: "/services/reitsolutions",
     },
     {
       icon: <Home className="w-8 h-8" />,
@@ -63,6 +69,7 @@ const ServicesPage = () => {
       description:
         "End-to-end real estate legal services including due diligence, transactions, and property law matters.",
       slug: "real-estate",
+      url: "/services/realestatesolutions",
     },
     {
       icon: <Lightbulb className="w-8 h-8" />,
@@ -70,6 +77,7 @@ const ServicesPage = () => {
       description:
         "Complete IP portfolio management including trademark, copyright, patent filing and protection services.",
       slug: "ip-management",
+      url: "/services/intellectualproperty",
     },
     {
       icon: <FileSignature className="w-8 h-8" />,
@@ -77,6 +85,7 @@ const ServicesPage = () => {
       description:
         "Expert drafting and review of contracts, agreements, and corporate policies tailored to your business needs.",
       slug: "agreements-policies",
+      url: "/services/agreementandpolicies",
     },
   ];
 
@@ -230,23 +239,25 @@ const ServicesPage = () => {
           {/* Services Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
             {services.map((service, index) => (
-              <div
-                key={index}
-                className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 group"
-              >
-                <div className="text-[#A5292A] mb-6 group-hover:opacity-80 transition-opacity">
-                  {service.icon}
+              <NavLink to={service.url}>
+                <div
+                  key={index}
+                  className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 group"
+                >
+                  <div className="text-[#A5292A] mb-6 group-hover:opacity-80 transition-opacity">
+                    {service.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-4">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">
+                    {service.description}
+                  </p>
+                  <button className="text-[#A5292A] font-semibold hover:opacity-80 flex items-center group-hover:translate-x-1 transition-transform">
+                    Find out more <ChevronRight className="ml-1 w-4 h-4" />
+                  </button>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed">
-                  {service.description}
-                </p>
-                <button className="text-[#A5292A] font-semibold hover:opacity-80 flex items-center group-hover:translate-x-1 transition-transform">
-                  Find out more <ChevronRight className="ml-1 w-4 h-4" />
-                </button>
-              </div>
+              </NavLink>
             ))}
           </div>
         </div>
@@ -493,101 +504,7 @@ const ServicesPage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white py-12">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="text-2xl font-bold mb-4">
-                Fathom <span style={{ color: "#A5292A" }}>Legal</span>
-              </div>
-              <p className="text-gray-300 mb-4">
-                Expert legal services for businesses and individuals with a
-                focus on startup ecosystem and SMB sector.
-              </p>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Services</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Corporate Law
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Startup Services
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Dispute Resolution
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    NGO & NPO
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Company</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    About Us
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Our Team
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Careers
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Legal</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Privacy Policy
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Terms of Service
-                  </a>
-                </li>
-                <li>
-                  <a href="#" className="hover:text-white transition-colors">
-                    Disclaimer
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-700 mt-12 pt-8 text-center text-gray-300">
-            <p>
-              &copy; 2024 Fathom Legal Advocates & Corporate Consultants. All
-              rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };

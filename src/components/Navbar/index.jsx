@@ -49,42 +49,42 @@ export const Navbar = ({ page }) => {
                 >
                   General Corporate Advisory
                 </NavLink>
-                <a
-                  href="#startup"
+                <NavLink
+                  to="/services/agreementandpolicies"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
-                  Agreements and Policies
-                </a>
-                <a
-                  href="#dispute"
+                  Agreement and Policies
+                </NavLink>
+                <NavLink
+                  to="/services/disputeresolution"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   Dispute Resolution
-                </a>
-                <a
-                  href="#ngo"
+                </NavLink>
+                <NavLink
+                  to="/services/intellectualproperty"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   Intellectual Property Services
-                </a>
-                <a
-                  href="#ngo"
+                </NavLink>
+                <NavLink
+                  to="/services/ankush"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   Safe & Inclusive Workplaces
-                </a>
-                <a
-                  href="#ngo"
+                </NavLink>
+                <NavLink
+                  to="/services/realestatesolutions"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   Real Estate Solution
-                </a>
-                <a
-                  href="#ngo"
+                </NavLink>
+                <NavLink
+                  to="/services/reitsolutions"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   REIT Solution
-                </a>
+                </NavLink>
               </div>
             </div>
 
