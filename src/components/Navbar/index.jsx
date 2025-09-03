@@ -91,41 +91,40 @@ export const Navbar = ({ page }) => {
             {/* VBS Dropdown */}
             <div className="relative group">
               <NavLink
-                to="/services"
+                to="/valueboostingsolutions"
                 className={
                   page === "vbs"
                     ? "text-[#A5292A] hover:text-[#A5292A] font-medium flex items-center"
                     : "text-gray-600 hover:text-[#A5292A] font-medium flex items-center"
                 }
               >
-                Value Boosting Solutions{" "}
-                <ChevronDown className="ml-1 w-4 h-4" />
+                VBS <ChevronDown className="ml-1 w-4 h-4" />
               </NavLink>
               <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100">
-                <a
-                  href="#corporate"
+                <NavLink
+                  to="/valueboostingsolutions/chieflegalofficerservice"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   Chief Legal Officer Service
-                </a>
-                <a
-                  href="#startup"
+                </NavLink>
+                <NavLink
+                  to="/valueboostingsolutions/techLegalBlueprint"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   Tech Legal Blueprint
-                </a>
-                <a
-                  href="#dispute"
+                </NavLink>
+                <NavLink
+                  to="/valueboostingsolutions/vcfundingsupport"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   VC Funding Support
-                </a>
-                <a
-                  href="#ngo"
+                </NavLink>
+                <NavLink
+                  to="/valueboostingsolutions/pitchdeckservices"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   Pitch Deck Services
-                </a>
+                </NavLink>
                 <a
                   href="#ngo"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
@@ -185,12 +184,12 @@ export const Navbar = ({ page }) => {
             >
               Contact
             </a>
-            <button
+            {/* <button
               className="text-white px-6 py-2 rounded-lg hover:opacity-90 transition-all font-medium"
               style={{ backgroundColor: "#A5292A" }}
             >
               Get Consultation
-            </button>
+            </button> */}
           </nav>
 
           {/* Mobile menu button */}
@@ -236,12 +235,12 @@ export const Navbar = ({ page }) => {
               >
                 Contact
               </a>
-              <button
+              {/* <button
                 className="w-full text-left text-white px-3 py-2 rounded-lg hover:opacity-90 font-medium"
                 style={{ backgroundColor: "#A5292A" }}
               >
                 Get Consultation
-              </button>
+              </button> */}
             </div>
           </div>
         )}
