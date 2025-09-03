@@ -113,12 +113,12 @@ export const Navbar = ({ page }) => {
                 >
                   Tech Legal Blueprint
                 </NavLink>
-                <a
-                  href="#dispute"
+                <NavLink
+                  to="/valueboostingsolutions/vcfundingsupport"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   VC Funding Support
-                </a>
+                </NavLink>
                 <a
                   href="#ngo"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
