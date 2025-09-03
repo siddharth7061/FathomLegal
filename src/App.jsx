@@ -12,12 +12,14 @@ import REITSolutions from "./pages/services/reitSolutions";
 import ValueBoostingSolutions from "./pages/valueBoostingSolutions";
 import ChiefLegalOfficerService from "./pages/valueBoostingSolutions/chiefLegalOfficerService";
 import ThoughtLeadership from "./pages/thought_leadership";
+import TechLegalBlueprint from "./pages/valueBoostingSolutions/teachLegalBluerint";
 
 const App = () => {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/aboutus" element={<AboutUs />} />
+
       {/* Services */}
       <Route path="/services" element={<ServicesPage />} />
       <Route
@@ -52,6 +54,12 @@ const App = () => {
         path="/valueboostingsolutions/chieflegalofficerservice"
         element={<ChiefLegalOfficerService />}
       />
+      <Route
+        path="/valueboostingsolutions/techLegalBlueprint"
+        element={<TechLegalBlueprint />}
+      />
+
+      {/* Thought Leadership */}
       <Route path="/thoughtleadership" element={<ThoughtLeadership />} />
     </Routes>
   );

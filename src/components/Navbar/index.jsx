@@ -107,12 +107,12 @@ export const Navbar = ({ page }) => {
                 >
                   Chief Legal Officer Service
                 </NavLink>
-                <a
-                  href="#startup"
+                <NavLink
+                  to="/valueboostingsolutions/techLegalBlueprint"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   Tech Legal Blueprint
-                </a>
+                </NavLink>
                 <a
                   href="#dispute"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
