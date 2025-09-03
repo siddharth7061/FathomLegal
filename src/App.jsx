@@ -11,6 +11,7 @@ import RealEstateSolutions from "./pages/services/realEstateSolutions";
 import REITSolutions from "./pages/services/reitSolutions";
 import ValueBoostingSolutions from "./pages/valueBoostingSolutions";
 import ChiefLegalOfficerService from "./pages/valueBoostingSolutions/chiefLegalOfficerService";
+import ThoughtLeadership from "./pages/thought_leadership";
 
 const App = () => {
   return (
@@ -51,6 +52,7 @@ const App = () => {
         path="/valueboostingsolutions/chieflegalofficerservice"
         element={<ChiefLegalOfficerService />}
       />
+      <Route path="/thoughtleadership" element={<ThoughtLeadership />} />
     </Routes>
   );
 };
