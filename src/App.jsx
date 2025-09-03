@@ -14,6 +14,7 @@ import ChiefLegalOfficerService from "./pages/valueBoostingSolutions/chiefLegalO
 import ThoughtLeadership from "./pages/thought_leadership";
 import TechLegalBlueprint from "./pages/valueBoostingSolutions/teachLegalBluerint";
 import VCFundingSupport from "./pages/valueBoostingSolutions/vcFundingSupport";
+import PitchDeckServices from "./pages/valueBoostingSolutions/pitchDeckServices";
 
 const App = () => {
   return (
@@ -62,6 +63,10 @@ const App = () => {
       <Route
         path="/valueboostingsolutions/vcfundingsupport"
         element={<VCFundingSupport />}
+      />
+      <Route
+        path="/valueboostingsolutions/pitchdeckservices"
+        element={<PitchDeckServices />}
       />
 
       {/* Thought Leadership */}

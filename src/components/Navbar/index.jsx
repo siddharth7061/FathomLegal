@@ -119,12 +119,12 @@ export const Navbar = ({ page }) => {
                 >
                   VC Funding Support
                 </NavLink>
-                <a
-                  href="#ngo"
+                <NavLink
+                  to="/valueboostingsolutions/pitchdeckservices"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
                 >
                   Pitch Deck Services
-                </a>
+                </NavLink>
                 <a
                   href="#ngo"
                   className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
