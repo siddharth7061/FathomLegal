@@ -16,7 +16,7 @@ import {
 } from "lucide-react";
 
 const PitchDeckServices = () => {
-  const [currentSlide, setCurrentSlide] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
   const services = [
     {
@@ -63,20 +63,24 @@ const PitchDeckServices = () => {
     },
   ];
 
-  const itemsPerSlide = 3;
-  const totalSlides = Math.ceil(services.length / itemsPerSlide);
+  const itemsToShow = 3;
+  const totalItems = services.length;
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % totalSlides);
+    setCurrentIndex((prev) => (prev + 1) % totalItems);
   };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + totalSlides) % totalSlides);
+    setCurrentIndex((prev) => (prev - 1 + totalItems) % totalItems);
   };
 
-  const getCurrentServices = () => {
-    const startIndex = currentSlide * itemsPerSlide;
-    return services.slice(startIndex, startIndex + itemsPerSlide);
+  const getVisibleServices = () => {
+    const visibleServices = [];
+    for (let i = 0; i < itemsToShow; i++) {
+      const index = (currentIndex + i) % totalItems;
+      visibleServices.push({ ...services[index], originalIndex: index });
+    }
+    return visibleServices;
   };
 
   return (
@@ -182,7 +186,6 @@ const PitchDeckServices = () => {
               onClick={prevSlide}
               className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 z-10 text-white p-3 rounded-full shadow-lg hover:opacity-80 transition-all"
               style={{ backgroundColor: "#A5292A" }}
-              disabled={totalSlides <= 1}
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
@@ -191,74 +194,55 @@ const PitchDeckServices = () => {
               onClick={nextSlide}
               className="absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 z-10 text-white p-3 rounded-full shadow-lg hover:opacity-80 transition-all"
               style={{ backgroundColor: "#A5292A" }}
-              disabled={totalSlides <= 1}
             >
               <ChevronRight className="w-6 h-6" />
             </button>
 
             {/* Carousel Content */}
-            <div className="overflow-hidden">
-              <div
-                className="flex transition-transform duration-300 ease-in-out"
-                style={{
-                  transform: `translateX(-${currentSlide * 100}%)`,
-                }}
-              >
-                {Array.from({ length: totalSlides }, (_, slideIndex) => (
-                  <div key={slideIndex} className="w-full flex-shrink-0">
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-4">
-                      {services
-                        .slice(
-                          slideIndex * itemsPerSlide,
-                          slideIndex * itemsPerSlide + itemsPerSlide
-                        )
-                        .map((service, index) => (
-                          <div
-                            key={slideIndex * itemsPerSlide + index}
-                            className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 group"
-                          >
-                            <div
-                              className="text-white p-3 rounded-lg mb-6 w-fit group-hover:opacity-80 transition-opacity"
-                              style={{ backgroundColor: "#A5292A" }}
-                            >
-                              {service.icon}
-                            </div>
-                            <h3 className="text-xl font-semibold text-gray-800 mb-4">
-                              {service.title}
-                            </h3>
-                            <p className="text-gray-600 leading-relaxed mb-6">
-                              {service.description}
-                            </p>
-                            <button
-                              className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all w-full"
-                              style={{ backgroundColor: "#A5292A" }}
-                            >
-                              Book Now
-                            </button>
-                          </div>
-                        ))}
+            <div className="overflow-hidden px-4">
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-500 ease-in-out">
+                {getVisibleServices().map((service, index) => (
+                  <div
+                    key={`${service.originalIndex}-${currentIndex}`}
+                    className="bg-white p-8 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 group"
+                  >
+                    <div
+                      className="text-white p-3 rounded-lg mb-6 w-fit group-hover:opacity-80 transition-opacity"
+                      style={{ backgroundColor: "#A5292A" }}
+                    >
+                      {service.icon}
                     </div>
+                    <h3 className="text-xl font-semibold text-gray-800 mb-4">
+                      {service.title}
+                    </h3>
+                    <p className="text-gray-600 leading-relaxed mb-6">
+                      {service.description}
+                    </p>
+                    <button
+                      className="text-white px-6 py-3 rounded-lg font-semibold hover:opacity-90 transition-all w-full"
+                      style={{ backgroundColor: "#A5292A" }}
+                    >
+                      Book Now
+                    </button>
                   </div>
                 ))}
               </div>
             </div>
 
             {/* Carousel Indicators */}
-            {totalSlides > 1 && (
-              <div className="flex justify-center mt-12 space-x-2">
-                {Array.from({ length: totalSlides }, (_, index) => (
-                  <button
-                    key={index}
-                    onClick={() => setCurrentSlide(index)}
-                    className={`w-3 h-3 rounded-full transition-all ${
-                      index === currentSlide
-                        ? "bg-[#A5292A]"
-                        : "bg-gray-300 hover:bg-gray-400"
-                    }`}
-                  />
-                ))}
-              </div>
-            )}
+            <div className="flex justify-center mt-12 space-x-2">
+              {services.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentIndex(index)}
+                  className={`w-3 h-3 rounded-full transition-all ${
+                    index === currentIndex
+                      ? "bg-[#A5292A]"
+                      : "bg-gray-300 hover:bg-gray-400"
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
