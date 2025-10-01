@@ -88,16 +88,16 @@ export const Navbar = ({ page }) => {
                 </NavLink>
               </div>
             </div>
-
+            
             <NavLink
-              to="/gallery"
+              to="/web3law"
               className={
-                page === "gallery"
+                page === "web3law"
                   ? "text-[#A5292A] hover:text-[#A5292A] font-medium flex items-center"
                   : "text-gray-600 hover:text-[#A5292A] font-medium flex items-center"
               }
             >
-              Newsfeed
+              Web3 law
             </NavLink>
 
             <NavLink
@@ -112,15 +112,18 @@ export const Navbar = ({ page }) => {
             </NavLink>
 
             <NavLink
-              to="/web3law"
+              to="/gallery"
               className={
-                page === "web3law"
+                page === "gallery"
                   ? "text-[#A5292A] hover:text-[#A5292A] font-medium flex items-center"
                   : "text-gray-600 hover:text-[#A5292A] font-medium flex items-center"
               }
             >
-              Web3 law
+              Newsfeed
             </NavLink>
+
+           
+            
 
             {/* VBS Dropdown */}
             <div className="relative group">
@@ -179,29 +182,11 @@ export const Navbar = ({ page }) => {
                 }
               >
                 Thought Leadership
-                <ChevronDown className="ml-1 w-4 h-4" />
+              
               </NavLink>
-              <div className="absolute top-full left-0 bg-white shadow-lg rounded-lg py-2 w-48 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 border border-gray-100">
-                <a
-                  href="#corporate"
-                  className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
-                >
-                  Incorporate your dream company in seven easy steps!
-                </a>
-                <a
-                  href="#startup"
-                  className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
-                >
-                  Never lose a deal: Master Contract Management like a PRO
-                </a>
-                <a
-                  href="#dispute"
-                  className="block px-4 py-2 text-gray-600 hover:bg-[#FAFAFA] hover:text-[#A5292A]"
-                >
-                  Resolve Conflicts Fast: Ultimate Dispute Resolution Guide
-                </a>
+             
               </div>
-            </div>
+            
             
             <NavLink
               to="/contact"
