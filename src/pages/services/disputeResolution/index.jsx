@@ -119,7 +119,7 @@ const DisputeResolution = () => {
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto text-center">
             <h2 className="text-4xl font-bold text-gray-800 mb-8">
-              1. Our Areas of Expertise Include:
+               Our Areas of Expertise Include:
             </h2>
             <p className="text-lg text-gray-600 leading-relaxed">
               At Fathom Legal, we specialize in resolving a wide range of

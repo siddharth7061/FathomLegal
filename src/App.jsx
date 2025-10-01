@@ -15,7 +15,10 @@ import ThoughtLeadership from "./pages/thought_leadership";
 import TechLegalBlueprint from "./pages/valueBoostingSolutions/teachLegalBluerint";
 import VCFundingSupport from "./pages/valueBoostingSolutions/vcFundingSupport";
 import PitchDeckServices from "./pages/valueBoostingSolutions/pitchDeckServices";
-
+import Templates from "./pages/templates/page";
+import Web3Law from "./pages/web3law/page";
+import Contact from "./pages/contact";
+import Gallery from "./pages/gallery";
 const App = () => {
   return (
     <Routes>
@@ -71,6 +74,19 @@ const App = () => {
 
       {/* Thought Leadership */}
       <Route path="/thoughtleadership" element={<ThoughtLeadership />} />
+
+      {/* Gallery */}
+      <Route path="/gallery" element={<Gallery />} />
+
+      {/* Templates */}
+      <Route path="/templates" element={<Templates />} />
+
+      {/* Web3 law */}
+      <Route path="/web3law" element={<Web3Law />} />
+
+      {/* Contact */}
+      <Route path="/contact" element={<Contact />} />
+
     </Routes>
   );
 };

@@ -23,39 +23,32 @@ const DisclaimerPopup = ({ isOpen, onClose }) => {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center">
-      {/* Slightly Dark Background Overlay */}
-      <div
-        className="absolute inset-0 bg-black opacity-50 transition-opacity"
-        onClick={onClose}
-      ></div>
-
-      {/* Popup Box */}
-      <div className="relative bg-white rounded-lg shadow-2xl max-w-2xl mx-4 p-8 max-h-[90vh] overflow-y-auto">
-        <div className="text-center">
-          <h2 className="text-2xl font-bold text-gray-800 mb-6">
-            <span style={{ color: "#A5292A" }}>Disclaimer</span>
-          </h2>
-
-          <p className="text-gray-600 leading-relaxed mb-8 text-left">
-            In accordance with the regulations set by the Bar Council of India,
-            lawyers and law firms are prohibited from actively seeking work or
-            engaging in advertising practices. By selecting the 'I Agree'
-            button, you affirm and acknowledge that you are voluntarily seeking
-            information about Fathom Legal, Advocates & Corporate Consultants
-            (FLACC) and that there has been no form of advertising, direct
-            communication, solicitation, invitation, or any other attempt,
-            either from FLACC or any of its members, to encourage work
-            engagement through this website.
-          </p>
-
-          <button
-            onClick={onClose}
-            className="text-white px-8 py-3 rounded-lg font-semibold hover:opacity-90 transition-all"
-            style={{ backgroundColor: "#A5292A" }}
-          >
-            I Agree
-          </button>
+    <div className="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-gray-200 shadow-lg">
+      <div className="container mx-auto px-4 py-4">
+        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="flex-1">
+            <h3 className="text-lg font-semibold text-gray-800 mb-2">
+              <span style={{ color: "#A5292A" }}>Disclaimer</span>
+            </h3>
+            <p className="text-sm text-gray-600 leading-relaxed">
+              In accordance with the regulations set by the Bar Council of India, lawyers and law firms are prohibited from actively seeking work or engaging in advertising practices. By selecting 'I Agree', you affirm that you are voluntarily seeking information about Fathom Legal, Advocates & Corporate Consultants (FLACC) and that there has been no form of advertising, direct communication, solicitation, invitation, or any other attempt from FLACC or any of its members to encourage work engagement through this website.
+            </p>
+          </div>
+          <div className="flex gap-3">
+            <button
+              onClick={onClose}
+              className="text-white px-6 py-2 rounded-lg font-semibold hover:opacity-90 transition-all text-sm"
+              style={{ backgroundColor: "#A5292A" }}
+            >
+              I Agree
+            </button>
+            <button
+              onClick={onClose}
+              className="text-gray-600 px-4 py-2 rounded-lg font-medium hover:bg-gray-100 transition-all text-sm border border-gray-300"
+            >
+              Decline
+            </button>
+          </div>
         </div>
       </div>
     </div>
@@ -77,24 +70,28 @@ const Home = () => {
       title: "Corporate Law",
       description:
         "Comprehensive corporate legal services including compliance, governance, and regulatory matters.",
+      link: "/services/generalcorporateadvisory",
     },
     {
       icon: <Users className="w-8 h-8" />,
       title: "Startup Legal Services",
       description:
         "Specialized legal support for startups, including incorporation, funding, and growth strategies.",
+      link: "/services/generalcorporateadvisory",
     },
     {
       icon: <FileText className="w-8 h-8" />,
       title: "Contract Management",
       description:
         "Expert contract drafting, review, and management services for businesses of all sizes.",
+      link: "/services/generalcorporateadvisory",
     },
     {
       icon: <Shield className="w-8 h-8" />,
       title: "Dispute Resolution",
       description:
         "Professional dispute resolution services including arbitration and litigation support.",
+      link: "/services/disputeresolution",
     },
   ];
 
@@ -182,14 +179,18 @@ const Home = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button
-                className="text-white px-8 py-4 rounded-lg text-lg font-semibold hover:opacity-90 transition-all flex items-center justify-center"
+                onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
+                className="text-white px-8 py-4 rounded-lg text-lg font-semibold hover:opacity-90 transition-all flex items-center justify-center cursor-pointer"
                 style={{ backgroundColor: "#A5292A" }}
               >
                 Get Free Consultation <ArrowRight className="ml-2 w-5 h-5" />
               </button>
-              <button className="border-2 text-gray-700 hover:bg-gray-50 px-8 py-4 rounded-lg text-lg font-semibold transition-colors border-gray-300">
-                Our Services
-              </button>
+              
             </div>
           </div>
         </div>
@@ -221,12 +222,12 @@ const Home = () => {
                   {service.title}
                 </h3>
                 <p className="text-gray-600 mb-4">{service.description}</p>
-                <a
-                  href="#"
+                <NavLink
+                  to={service.link}
                   className="text-[#A5292A] font-medium hover:opacity-80 flex items-center"
                 >
                   Learn More <ChevronRight className="ml-1 w-4 h-4" />
-                </a>
+                </NavLink>
               </div>
             ))}
           </div>
