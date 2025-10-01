@@ -4,6 +4,8 @@ import logo from "../../assets/cropped-icon-red-192x192.png";
 import { NavLink } from "react-router-dom";
 export const Navbar = ({ page }) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isValueServicesOpen, setIsValueServicesOpen] = useState(false);
 
   return (
     <header className="bg-white shadow-sm border-b border-gray-100 sticky top-0 z-50">
@@ -224,44 +226,188 @@ export const Navbar = ({ page }) => {
           <div className="md:hidden bg-white border-t border-gray-100">
             <div className="px-2 pt-2 pb-3 space-y-1">
               <NavLink
-                className="block px-3 py-2 text-gray-600 hover:text-[#A5292A]"
+                className={`block px-3 py-2 font-medium ${
+                  page === "home"
+                    ? "text-[#A5292A]"
+                    : "text-gray-600 hover:text-[#A5292A]"
+                }`}
                 to="/"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Home
               </NavLink>
 
               <NavLink
-                className="block px-3 py-2 text-gray-600 hover:text-[#A5292A]"
-                to="/services"
-              >
-                Services
-              </NavLink>
-
-              <NavLink
-                className="block px-3 py-2 text-gray-600 hover:text-[#A5292A]"
-                to="/gallery"
-              >
-                Gallery
-              </NavLink>
-
-              <NavLink
-                className="block px-3 py-2 text-gray-600 hover:text-[#A5292A]"
+                className={`block px-3 py-2 font-medium ${
+                  page === "aboutus"
+                    ? "text-[#A5292A]"
+                    : "text-gray-600 hover:text-[#A5292A]"
+                }`}
                 to="/aboutus"
+                onClick={() => setIsMenuOpen(false)}
               >
                 About Us
               </NavLink>
+
+              {/* Services Dropdown */}
+              <div>
+                <button
+                  className="flex items-center justify-between w-full px-3 py-2 text-gray-600 hover:text-[#A5292A] font-medium"
+                  onClick={() => setIsServicesOpen(!isServicesOpen)}
+                >
+                  Services
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isServicesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {isServicesOpen && (
+                  <div className="pl-4 space-y-1">
+                    <NavLink
+                      to="/services/generalcorporateadvisory"
+                      className="block px-3 py-2 text-gray-600 hover:text-[#A5292A] text-sm"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      General Corporate Advisory
+                    </NavLink>
+                    <NavLink
+                      to="/services/disputeresolution"
+                      className="block px-3 py-2 text-gray-600 hover:text-[#A5292A] text-sm"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Dispute Resolution
+                    </NavLink>
+                    <NavLink
+                      to="/services/intellectualproperty"
+                      className="block px-3 py-2 text-gray-600 hover:text-[#A5292A] text-sm"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Intellectual Property Services
+                    </NavLink>
+                    <NavLink
+                      to="/services/realestatesolutions"
+                      className="block px-3 py-2 text-gray-600 hover:text-[#A5292A] text-sm"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Real Estate Solution
+                    </NavLink>
+                    <NavLink
+                      to="/services/reitsolutions"
+                      className="block px-3 py-2 text-gray-600 hover:text-[#A5292A] text-sm"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      REIT Solution
+                    </NavLink>
+                  </div>
+                )}
+              </div>
+
               <NavLink
+                className={`block px-3 py-2 font-medium ${
+                  page === "web3law"
+                    ? "text-[#A5292A]"
+                    : "text-gray-600 hover:text-[#A5292A]"
+                }`}
+                to="/web3law"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Web3 law
+              </NavLink>
+
+              <NavLink
+                className={`block px-3 py-2 font-medium ${
+                  page === "templates"
+                    ? "text-[#A5292A]"
+                    : "text-gray-600 hover:text-[#A5292A]"
+                }`}
+                to="/templates"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Templates
+              </NavLink>
+
+              <NavLink
+                className={`block px-3 py-2 font-medium ${
+                  page === "gallery"
+                    ? "text-[#A5292A]"
+                    : "text-gray-600 hover:text-[#A5292A]"
+                }`}
+                to="/gallery"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Newsfeed
+              </NavLink>
+
+              {/* Value Services Dropdown */}
+              <div>
+                <button
+                  className="flex items-center justify-between w-full px-3 py-2 text-gray-600 hover:text-[#A5292A] font-medium"
+                  onClick={() => setIsValueServicesOpen(!isValueServicesOpen)}
+                >
+                  Value Services
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isValueServicesOpen ? 'rotate-180' : ''}`} />
+                </button>
+                {isValueServicesOpen && (
+                  <div className="pl-4 space-y-1">
+                    <NavLink
+                      to="/valueboostingsolutions/chieflegalofficerservice"
+                      className="block px-3 py-2 text-gray-600 hover:text-[#A5292A] text-sm"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Chief Legal Officer Service
+                    </NavLink>
+                    <NavLink
+                      to="/valueboostingsolutions/techLegalBlueprint"
+                      className="block px-3 py-2 text-gray-600 hover:text-[#A5292A] text-sm"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Tech Legal Blueprint
+                    </NavLink>
+                    <NavLink
+                      to="/valueboostingsolutions/vcfundingsupport"
+                      className="block px-3 py-2 text-gray-600 hover:text-[#A5292A] text-sm"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      VC Funding Support
+                    </NavLink>
+                    <NavLink
+                      to="/valueboostingsolutions/pitchdeckservices"
+                      className="block px-3 py-2 text-gray-600 hover:text-[#A5292A] text-sm"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Pitch Deck Services
+                    </NavLink>
+                    <a
+                      href="#ngo"
+                      className="block px-3 py-2 text-gray-600 hover:text-[#A5292A] text-sm"
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      Cybersecurity Compliance Services
+                    </a>
+                  </div>
+                )}
+              </div>
+
+              <NavLink
+                className={`block px-3 py-2 font-medium ${
+                  page === "thoughtleadership"
+                    ? "text-[#A5292A]"
+                    : "text-gray-600 hover:text-[#A5292A]"
+                }`}
+                to="/thoughtleadership"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Thought Leadership
+              </NavLink>
+
+              <NavLink
+                className={`block px-3 py-2 font-medium ${
+                  page === "contact"
+                    ? "text-[#A5292A]"
+                    : "text-gray-600 hover:text-[#A5292A]"
+                }`}
                 to="/contact"
-                className="block px-3 py-2 text-gray-600 hover:text-[#A5292A]"
+                onClick={() => setIsMenuOpen(false)}
               >
                 Contact
               </NavLink>
-              {/* <button
-                className="w-full text-left text-white px-3 py-2 rounded-lg hover:opacity-90 font-medium"
-                style={{ backgroundColor: "#A5292A" }}
-              >
-                Get Consultation
-              </button> */}
             </div>
           </div>
         )}
